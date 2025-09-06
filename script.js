@@ -13,22 +13,11 @@ console.log("5 Premiazione")
 
 const armiTemplate = ["tirapugni", "pugnale", "spada", "katana", "nunchaku", "ascia", "martello", "mazza dentata", "lancia", "alabarda", "scettro magico", "talismano"]
 
-const combattentiTemplate = [
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" },
-    { nome: "" }
-]
+const combattentiTemplate = []
 
-let postiLiberi = 12
+armiTemplate.forEach(arma => combattentiTemplate.push({ nome: "" }))
+
+let postiLiberi = armiTemplate.length
 const combattenti = [...combattentiTemplate]
 const sceltaArma = [...armiTemplate]
 console.log("ISCRIZIONI E SCELTA DELL'ARMA")
