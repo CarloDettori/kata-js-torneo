@@ -11,7 +11,7 @@ console.log("5 Premiazione")
 
 
 
-const armiTemplate = ["tirapugni", "pugnale", "spada", "katana", "nunchaku", "ascia", "martello", "mazza dentata", "lancia", "alabarda", "scettro magico", "talismano"]
+const armiTemplate = ["tirapugni", "pugnale", "spada", "nunchaku", "katana", "ascia", "martello", "mazza chiodata", "lancia", "alabarda", "talismano", "scettro magico"]
 
 const combattentiTemplate = []
 
@@ -21,8 +21,7 @@ let postiLiberi = armiTemplate.length
 const combattenti = [...combattentiTemplate]
 const sceltaArma = [...armiTemplate]
 console.log("ISCRIZIONI E SCELTA DELL'ARMA")
-console.log(`Ci sono ${postiLiberi}
- posti liberi`)
+console.log(`Ci sono ${postiLiberi} posti liberi`)
 
 combattenti.map((combattente, index) => {
 
@@ -50,7 +49,6 @@ combattenti.map((combattente, index) => {
         }
 
     }
-
 
     let armaValida = false
     while (armaValida === false) {
@@ -112,7 +110,13 @@ console.log("LISTA QUALIFICATI")
 
 qualificati.forEach(qualificato => console.log(qualificato.nome))
 
+if (qualificati.length % 2 !== 0) {
 
+    qualificati.push({ nome: "Combattente Robot", arma: "pugno metallico", potenza: 4000 })
+
+    console.log("Poiche il numero dei qualificati è dispari, ad essi è stato aggiunto un Combettante Robot armato di pistola laser con una potenza pari a 4000, in questo modi l'ultimo combattente della lista non resterà senza avversario")
+
+}
 
 console.log("CHE IL TORNEO ABBIA INIZIO!")
 
@@ -132,7 +136,6 @@ qualificati.sort((combattenteSX, combattenteDX) => {
 
     return combattenteSX.potenza - combattenteDX.potenza
 })
-
 
 console.log("IL TORNEO E' GIUNTO AL TERMINE")
 console.log("ora verranno annunciati i primi tre clasificati")
